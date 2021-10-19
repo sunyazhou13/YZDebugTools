@@ -1,0 +1,55 @@
+{
+  "name": "YZDebugTools",
+  "version": "0.0.1",
+  "summary": "摇一摇 debug 调试工具箱.",
+  "description": "shake tools \n power by sunyazhou.com",
+  "homepage": "https://github.com/sunyazhou13/YZDebugTools",
+  "license": "LICENSE",
+  "authors": {
+    "sunyazhou": "sunyazhou@autohome.com.cn"
+  },
+  "source": {
+    "git": "https://github.com/sunyazhou13/YZDebugTools.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "*.{h,m}",
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "dependencies": {
+    "MMKV": [
+
+    ],
+    "M80TableViewComponent": [
+
+    ],
+    "FLEX": [
+
+    ],
+    "FBAllocationTracker": [
+
+    ],
+    "FBMemoryProfiler": [
+
+    ],
+    "FBRetainCycleDetector": [
+
+    ],
+    "Masonry": [
+
+    ],
+    "BlocksKit": [
+
+    ]
+  },
+  "configuration_pod_whitelist": {
+    "FLEX": [
+      "debug"
+    ]
+  },
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

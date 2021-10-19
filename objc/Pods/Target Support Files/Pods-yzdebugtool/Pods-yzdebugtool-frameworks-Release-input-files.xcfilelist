@@ -1,0 +1,11 @@
+${PODS_ROOT}/Target Support Files/Pods-yzdebugtool/Pods-yzdebugtool-frameworks.sh
+${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework
+${BUILT_PRODUCTS_DIR}/FBAllocationTracker/FBAllocationTracker.framework
+${BUILT_PRODUCTS_DIR}/FBMemoryProfiler/FBMemoryProfiler.framework
+${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework
+${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework
+${BUILT_PRODUCTS_DIR}/M80TableViewComponent/M80TableViewComponent.framework
+${BUILT_PRODUCTS_DIR}/MMKV/MMKV.framework
+${BUILT_PRODUCTS_DIR}/MMKVCore/MMKVCore.framework
+${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
+${BUILT_PRODUCTS_DIR}/YZDebugTools/YZDebugTools.framework

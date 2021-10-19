@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'yzdebugtool' do
+  use_frameworks!
+
+  #摇一摇工具包
+  pod 'YZDebugTools', :path=>'./../yzdebugtools/basiccomponent/'
+  
+  #内存循环检测工具
+  pod 'FBAllocationTracker', :path=>'./../yzdebugtools/memorytools/FBAllocationTracker'
+  pod 'FBMemoryProfiler', :path=>'./../yzdebugtools/memorytools/FBMemoryProfiler'
+  pod 'FBRetainCycleDetector', :path=>'./../yzdebugtools/memorytools/FBRetainCycleDetector'
+  pod 'BlocksKit', :path=>'./../yzdebugtools/blockskit'
+end

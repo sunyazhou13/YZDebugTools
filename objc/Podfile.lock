@@ -1,0 +1,83 @@
+PODS:
+  - BlocksKit (2.2.6):
+    - BlocksKit/All (= 2.2.6)
+  - BlocksKit/All (2.2.6):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/QuickLook
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.2.6)
+  - BlocksKit/DynamicDelegate (2.2.6)
+  - BlocksKit/MessageUI (2.2.6):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/QuickLook (2.2.6):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.2.6):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+  - FBAllocationTracker (0.1.5)
+  - FBMemoryProfiler (0.1.3):
+    - FBAllocationTracker (~> 0.1)
+    - FBRetainCycleDetector (~> 0.1)
+  - FBRetainCycleDetector (0.1.4)
+  - FLEX (4.6.0)
+  - M80TableViewComponent (0.1.0)
+  - Masonry (1.1.0)
+  - MMKV (1.2.10):
+    - MMKVCore (~> 1.2.10)
+  - MMKVCore (1.2.10)
+  - YZDebugTools (0.0.1):
+    - BlocksKit
+    - FBAllocationTracker
+    - FBMemoryProfiler
+    - FBRetainCycleDetector
+    - FLEX
+    - M80TableViewComponent
+    - Masonry
+    - MMKV
+
+DEPENDENCIES:
+  - BlocksKit (from `./../yzdebugtools/blockskit`)
+  - FBAllocationTracker (from `./../yzdebugtools/memorytools/FBAllocationTracker`)
+  - FBMemoryProfiler (from `./../yzdebugtools/memorytools/FBMemoryProfiler`)
+  - FBRetainCycleDetector (from `./../yzdebugtools/memorytools/FBRetainCycleDetector`)
+  - YZDebugTools (from `./../yzdebugtools/basiccomponent/`)
+
+SPEC REPOS:
+  trunk:
+    - FLEX
+    - M80TableViewComponent
+    - Masonry
+    - MMKV
+    - MMKVCore
+
+EXTERNAL SOURCES:
+  BlocksKit:
+    :path: "./../yzdebugtools/blockskit"
+  FBAllocationTracker:
+    :path: "./../yzdebugtools/memorytools/FBAllocationTracker"
+  FBMemoryProfiler:
+    :path: "./../yzdebugtools/memorytools/FBMemoryProfiler"
+  FBRetainCycleDetector:
+    :path: "./../yzdebugtools/memorytools/FBRetainCycleDetector"
+  YZDebugTools:
+    :path: "./../yzdebugtools/basiccomponent/"
+
+SPEC CHECKSUMS:
+  BlocksKit: 5fae06c13638d9fdb0bbddca3dabfe8f5aa735c5
+  FBAllocationTracker: a29ce7406a6a26e4e9e2cdebb3147952c20fecfc
+  FBMemoryProfiler: 92a645ecdfccf1a2dc222468f2f64218dbc032c8
+  FBRetainCycleDetector: 46daef95c2dfa9be34b53087edf6a8f34e4c749c
+  FLEX: 6223ad3d853fb6177a6ab1cda85f372a72768da8
+  M80TableViewComponent: 5348f3b165ec98c827cad9d02884af3b78a567fc
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MMKV: 76033b9ace2006623308910a3afcc0e25eba3140
+  MMKVCore: b00e7a09ec77a1b916aef336eedd3b99ec249978
+  YZDebugTools: 523c8b4aefa11fd58c138321266ba8664bb67055
+
+PODFILE CHECKSUM: 495251af2ef8feb743e42961e576c6674203c060
+
+COCOAPODS: 1.11.2

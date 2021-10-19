@@ -1,0 +1,6 @@
+framework module Pods_yzdebugtool {
+  umbrella header "Pods-yzdebugtool-umbrella.h"
+
+  export *
+  module * { export * }
+}
