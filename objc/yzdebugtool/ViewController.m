@@ -15,7 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UILabel *shake = [[UILabel alloc] initWithFrame:CGRectMake(200, 200, 300, 60)];
+    shake.text = @"摇一摇试试";
+    [self.view addSubview:shake];
 }
 
 

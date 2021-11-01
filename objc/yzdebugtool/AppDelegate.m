@@ -7,11 +7,9 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import <FBMemoryProfiler/FBMemoryProfiler.h>
+#import "UIWindow+YZDebug.h"
 
 @interface AppDelegate ()
-
-@property (nonatomic, strong) FBMemoryProfiler *memoryProfiler;
 
 @end
 
@@ -23,13 +21,10 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     UIViewController *rootVC = [[ViewController alloc] init];
-    rootVC.view.backgroundColor = [UIColor cyanColor];
+    rootVC.view.backgroundColor = [UIColor lightTextColor];
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
-    
-    FBMemoryProfiler *memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:nil retainCycleDetectorConfiguration:nil];
-    [memoryProfiler enable];
-    _memoryProfiler = memoryProfiler;
+    [self.window enableDebug];
     return YES;
 }
 
