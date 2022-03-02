@@ -30,6 +30,9 @@
     cell.textLabel.text = self.funcName;
     cell.backgroundColor = [UIColor cyanColor];
     UISwitch *swt = [[UISwitch alloc] initWithFrame:CGRectZero];
+    MMKV *mmkv = [MMKV defaultMMKV];
+    BOOL enable = [mmkv getBoolForKey:@"YZEnableMemoryCheck"];
+    [swt setOn:enable animated:YES];
     [swt addTarget:self action:@selector(didOnSwitchValueChange:) forControlEvents:UIControlEventValueChanged];
     cell.accessoryView = swt;
 }
