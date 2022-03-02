@@ -29,11 +29,17 @@
 - (void)configure:(UITableViewCell *)cell {
     cell.textLabel.text = self.funcName;
     cell.backgroundColor = [UIColor cyanColor];
+    UISwitch *swt = [[UISwitch alloc] initWithFrame:CGRectZero];
+    [swt addTarget:self action:@selector(didOnSwitchValueChange:) forControlEvents:UIControlEventValueChanged];
+    cell.accessoryView = swt;
+}
+
+- (void)didOnSwitchValueChange:(UISwitch *)sender {
+    MMKV *mmkv = [MMKV defaultMMKV];
+    [mmkv setBool:sender.on forKey:@"YZEnableMemoryCheck"];
 }
 
 - (void)didSelect:(UITableViewCell *)cell {
-    MMKV *mmkv = [MMKV defaultMMKV];
-    [mmkv setBool:YES forKey:@"YZEnableMemoryCheck"];
     YZDebugListViewController *vc = (YZDebugListViewController *)self.context.viewController;
     [vc dismissViewControllerAnimated:YES completion:^{
         

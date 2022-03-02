@@ -75,6 +75,7 @@ static char *kYZMemoryProfiler = "YZMemoryProfiler";
 }
 
 - (void)enableDebug {
+    
     [MMKV initializeMMKV:nil];
     self.monitor = [[YZApplicationMonitor alloc] init];
     WS
