@@ -13,6 +13,7 @@
 #import "YZDebugTools.h"
 #import <objc/runtime.h>
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
+#import <MMKV/MMKV.h>
 
 static char *kYZDebugVCKey = "YZDebugVCKey";
 static char *kYZDebugMonitor = "YZDebugMonitor";
@@ -74,16 +75,22 @@ static char *kYZMemoryProfiler = "YZMemoryProfiler";
 }
 
 - (void)enableDebug {
+    [MMKV initializeMMKV:nil];
     self.monitor = [[YZApplicationMonitor alloc] init];
     WS
     self.monitor.didApplicationStateChanged = ^(BOOL active) {
       SS
         self.active = active;
     };
-    if (self.memoryProfiler == nil) {
-        self.memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:nil retainCycleDetectorConfiguration:nil];
+    
+    MMKV *mmkv = [MMKV defaultMMKV];
+    BOOL enable = [mmkv getBoolForKey:@"YZEnableMemoryCheck"];
+    if (enable) {
+        if (self.memoryProfiler == nil) {
+            self.memoryProfiler = [[FBMemoryProfiler alloc] initWithPlugins:nil retainCycleDetectorConfiguration:nil];
+        }
+        [self.memoryProfiler enable];
     }
-    [self.memoryProfiler enable];
 }
 
 - (void)yz_presentTweaks {

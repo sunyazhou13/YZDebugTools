@@ -11,8 +11,10 @@
 #endif
 
 #import "UIWindow+YZDebug.h"
+#import "YZApplicationMonitor.h"
 #import "YZBaseCellComponent.h"
 #import "YZDebugListViewController.h"
+#import "YZDebugTools.h"
 #import "YZDoneButtonCellComponent.h"
 #import "YZFLEXCellComponent.h"
 #import "YZMemoryToolCellComponent.h"

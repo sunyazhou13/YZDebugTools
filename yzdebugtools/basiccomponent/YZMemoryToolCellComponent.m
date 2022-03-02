@@ -6,6 +6,7 @@
 //
 
 #import "YZMemoryToolCellComponent.h"
+#import <MMKV/MMKV.h>
 
 @implementation YZMemoryToolCellComponent
 
@@ -31,6 +32,8 @@
 }
 
 - (void)didSelect:(UITableViewCell *)cell {
+    MMKV *mmkv = [MMKV defaultMMKV];
+    [mmkv setBool:YES forKey:@"YZEnableMemoryCheck"];
     YZDebugListViewController *vc = (YZDebugListViewController *)self.context.viewController;
     [vc dismissViewControllerAnimated:YES completion:^{
         
