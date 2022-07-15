@@ -62,27 +62,37 @@ retainCycleDetectorConfiguration:(FBObjectGraphConfiguration *)retainCycleDetect
 
 - (void)enable
 {
-  // Put Memory profiler in status bar but save window for future reference when showing on screen
-  _enabled = YES;
-  
-  [[FBAllocationTrackerManager sharedManager] enableGenerations];
-  
-  _containerViewController = [FBMemoryProfilerContainerViewController new];
-  
-  _memoryProfilerWindow = [[FBMemoryProfilerWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  _memoryProfilerWindow.touchesDelegate = self;
-  _memoryProfilerWindow.rootViewController = _containerViewController;
-  _memoryProfilerWindow.hidden = NO;
-  
-  self.presentationMode = FBMemoryProfilerPresentationModeCondensed;
-  
-  [_options.plugins enumerateObjectsUsingBlock:^(id<FBMemoryProfilerPluggable> plugin,
+    // Put Memory profiler in status bar but save window for future reference when showing on screen
+    _enabled = YES;
+
+    [[FBAllocationTrackerManager sharedManager] enableGenerations];
+
+    _containerViewController = [FBMemoryProfilerContainerViewController new];
+    CGRect windowRect =  [UIScreen mainScreen].bounds;
+    _memoryProfilerWindow = [[FBMemoryProfilerWindow alloc] initWithFrame:windowRect];
+    _memoryProfilerWindow.touchesDelegate = self;
+    _memoryProfilerWindow.rootViewController = _containerViewController;
+    _memoryProfilerWindow.hidden = NO;
+    if (@available(iOS 13.0, *)) {
+        for (UIWindowScene *windowScene in [UIApplication sharedApplication].connectedScenes) {
+            if (windowScene.activationState == UISceneActivationStateForegroundActive) {
+                _memoryProfilerWindow.windowScene = windowScene;
+                break;
+            }
+        }
+    } else {
+//        NSLog(@"低于iOS 13版本不做操作")
+    }
+    
+    self.presentationMode = FBMemoryProfilerPresentationModeCondensed;
+
+    [_options.plugins enumerateObjectsUsingBlock:^(id<FBMemoryProfilerPluggable> plugin,
                                                  NSUInteger idx,
                                                  BOOL *stop) {
     if ([plugin respondsToSelector:@selector(memoryProfilerDidEnable)]) {
       [plugin memoryProfilerDidEnable];
     }
-  }];
+    }];
 }
 
 - (void)disable
